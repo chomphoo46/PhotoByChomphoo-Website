@@ -30,14 +30,14 @@ function Contact() {
       <div className="contact-container">
         <div className="contact-info">
           <h3>ข้อมูลติดต่อ</h3>
-          <p>อีเมล: youremail@example.com</p>
-          <p>โทรศัพท์: +66 xx xxx xxxx</p>
-          <p>ที่อยู่: [ที่อยู่ของคุณ]</p>
+          <p>อีเมล: Chomphoo2546@gmail.com</p>
+          <p>โทรศัพท์: +66 89 227 6469</p>
+          <p>ที่อยู่: 20/2 ซอย 2/7 ถนน เลียบคลองสาม อำเภอ คลองหลวง ตำบล คลองสาม จังหวัด ปทุมธานี</p>
           
           <div className="social-links">
             <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href="#" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://www.facebook.com/profile.php?id=61555299486342" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="https://lin.ee/xYjPOrk" target="_blank" rel="noopener noreferrer">Line official</a>
           </div>
         </div>
         

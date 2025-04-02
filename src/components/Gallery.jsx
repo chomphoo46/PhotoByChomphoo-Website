@@ -1,63 +1,227 @@
-import { useState } from 'react'
-import './Gallery.css'
+import { useState } from "react";
+import "./Gallery.css";
 
 function Gallery() {
   // สร้างข้อมูลตัวอย่าง - แทนที่ด้วยรูปภาพจริงของคุณ
   const photos = [
-    { id: 1, url: 'https://via.placeholder.com/400x300', title: 'ธรรมชาติ', category: 'nature' },
-    { id: 2, url: 'https://via.placeholder.com/400x300', title: 'เมือง', category: 'urban' },
-    { id: 3, url: 'https://via.placeholder.com/400x300', title: 'คน', category: 'portrait' },
-    { id: 4, url: 'https://via.placeholder.com/400x300', title: 'สถาปัตยกรรม', category: 'architecture' },
-    { id: 5, url: 'https://via.placeholder.com/400x300', title: 'สัตว์', category: 'wildlife' },
-    { id: 6, url: 'https://via.placeholder.com/400x300', title: 'ทะเล', category: 'nature' },
-    // เพิ่มรูปภาพอื่นๆ ตามต้องการ
-  ]
+    {
+      id: 1,
+      url: "/src/assets/พี่ขนุน.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 2,
+      url: "/src/assets/nida.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 3,
+      url: "/src/assets/kim.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 4,
+      url: "/src/assets/pookie.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 5,
+      url: "/src/assets/chi.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 6,
+      url: "/src/assets/save.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 7,
+      url: "/src/assets/pator.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 8,
+      url: "/src/assets/gace.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 9,
+      url: "/src/assets/fern2.jpg",
+      title: "graduation",
+      category: "graduation",
+    },
+    {
+      id: 10,
+      url: "/src/assets/nursing.png",
+      title: "รับหมวกพยาบาล",
+      category: "nursing",
+    },
+    {
+      id: 11,
+      url: "/src/assets/กีตาร์.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 12,
+      url: "/src/assets/rixa_1.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 13,
+      url: "/src/assets/plam.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 14,
+      url: "/src/assets/chula.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 15,
+      url: "/src/assets/tar.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 16,
+      url: "/src/assets/rixa_2.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 17,
+      url: "/src/assets/ball_rixa.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 18,
+      url: "/src/assets/jar.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 19,
+      url: "/src/assets/ning.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 20,
+      url: "/src/assets/mos.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 21,
+      url: "/src/assets/nur.jpg",
+      title: "portrait",
+      category: "portrait",
+    },
+    {
+      id: 22,
+      url: "/src/assets/น้องไหม.jpg",
+      title: "กีฬาสี",
+      category: "sport",
+    },
+    {
+      id: 23, 
+      url: "/src/assets/3k.jpg", 
+      title: "กีฬาสี", 
+      category: "sport" 
+    },
+    { 
+      id: 24, 
+      url: "/src/assets/same.jpg", 
+      title: "กีฬาสี", 
+      category: "sport" 
+    },
+    {
+      id: 25,
+      url: "/src/assets/mac.jpg",
+      title: "ขึ้นบ้านใหม่",
+      category: "new-home",
+    },
+    {
+      id: 26,
+      url: "/src/assets/newhome.jpg",
+      title: "ขึ้นบ้านใหม่",
+      category: "new-home",
+    },
+    {
+      id: 27,
+      url: "/src/assets/newhome2.jpg",
+      title: "ขึ้นบ้านใหม่",
+      category: "new-home",
+    },
 
-  const [filter, setFilter] = useState('all')
-  
-  const filteredPhotos = filter === 'all' 
-    ? photos 
-    : photos.filter(photo => photo.category === filter)
+    // เพิ่มรูปภาพอื่นๆ ตามต้องการ
+  ];
+
+  const [filter, setFilter] = useState("all");
+
+  const filteredPhotos =
+    filter === "all"
+      ? photos
+      : photos.filter((photo) => photo.category === filter);
 
   return (
     <section className="gallery">
       <h2>ผลงานของฉัน</h2>
-      
+
       <div className="filter-buttons">
-        <button 
-          className={filter === 'all' ? 'active' : ''} 
-          onClick={() => setFilter('all')}
+        <button
+          className={filter === "all" ? "active" : ""}
+          onClick={() => setFilter("all")}
         >
           ทั้งหมด
         </button>
-        <button 
-          className={filter === 'nature' ? 'active' : ''} 
-          onClick={() => setFilter('nature')}
+        <button
+          className={filter === "graduation" ? "active" : ""}
+          onClick={() => setFilter("graduation")}
         >
-          รับปริญญา
+          graduation
         </button>
-        <button 
-          className={filter === 'urban' ? 'active' : ''} 
-          onClick={() => setFilter('urban')}
+        <button
+          className={filter === "nursing" ? "active" : ""}
+          onClick={() => setFilter("nursing")}
+        >
+          รับหมวกพยาบาล
+        </button>
+        <button
+          className={filter === "new-home" ? "active" : ""}
+          onClick={() => setFilter("new-home")}
         >
           ขึ้นบ้านใหม่/ทำบุญ
         </button>
-        <button 
-          className={filter === 'portrait' ? 'active' : ''} 
-          onClick={() => setFilter('portrait')}
+        <button
+          className={filter === "portrait" ? "active" : ""}
+          onClick={() => setFilter("portrait")}
         >
-          บุคคล
+          portrait
         </button>
-        <button 
-          className={filter === 'architecture' ? 'active' : ''} 
-          onClick={() => setFilter('architecture')}
+        <button
+          className={filter === "sport" ? "active" : ""}
+          onClick={() => setFilter("sport")}
         >
           กีฬาสี
         </button>
       </div>
-      
+
       <div className="photo-grid">
-        {filteredPhotos.map(photo => (
+        {filteredPhotos.map((photo) => (
           <div key={photo.id} className="photo-item">
             <img src={photo.url} alt={photo.title} />
             <h3>{photo.title}</h3>
@@ -65,7 +229,7 @@ function Gallery() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
-export default Gallery
+export default Gallery;

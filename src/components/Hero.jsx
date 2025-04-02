@@ -1,17 +1,19 @@
-import './Hero.css'
+import "./Hero.css";
 
-function Hero() {
+function Hero({ setCurrentSection }) {  
   return (
     <section className="hero">
       <div className="hero-content">
-        <h1>ยินดีต้อนรับสู่ <br />
-        Photo By Chomphoo</h1>
+        <h1>
+          ยินดีต้อนรับสู่ <br />
+          Photo By Chomphoo
+        </h1>
         <p>ให้เราได้เป็นส่วนหนึ่งของคุณนะคะ เลือกเราไม่มีคำว่าผิดหวัง</p>
-        <button onClick={() => window.location.href = '#gallery'}>ดูผลงาน</button>
-        <button onClick={() => window.location.href = '#gallery'}>แพ็คเกจ</button>
+        <button onClick={() => setCurrentSection("gallery")}>ดูผลงาน</button>
+        <button onClick={() => setCurrentSection("packages")}>แพ็คเกจ</button>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

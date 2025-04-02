@@ -20,6 +20,12 @@ function Navbar({ currentSection, setCurrentSection }) {
           แกลเลอรี่
         </li>
         <li 
+          className={currentSection === 'packages' ? 'active' : ''} 
+          onClick={() => setCurrentSection('packages')}
+        >
+          แพ็คเกจ
+        </li>
+        <li 
           className={currentSection === 'about' ? 'active' : ''} 
           onClick={() => setCurrentSection('about')}
         >
