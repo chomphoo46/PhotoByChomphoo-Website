@@ -1,14 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./Gallery.css";
 
-function Gallery() {
+function Gallery({ setCurrentSection, setSelectedPhoto }) {
   // สร้างข้อมูลตัวอย่าง - แทนที่ด้วยรูปภาพจริงของคุณ
   const photos = [
     {
       id: 1,
-      url: "/src/assets/พี่ขนุน.jpg",
+      url: "/src/assets/khanun.jpg",
       title: "graduation",
       category: "graduation",
+      description: "ภาพถ่ายงานรับปริญญาของบัณฑิตใหม่ ถ่ายในวันรับจริง",
+      date: "15 มีนาคม 2025",
+      location: "มหาวิทยาลัยเกษตรศาสตร์  บางเขน",
     },
     {
       id: 2,
@@ -137,21 +140,21 @@ function Gallery() {
       category: "sport",
     },
     {
-      id: 23, 
-      url: "/src/assets/3k.jpg", 
-      title: "กีฬาสี", 
-      category: "sport" 
+      id: 23,
+      url: "/src/assets/3k.jpg",
+      title: "กีฬาสี",
+      category: "sport",
     },
-    { 
-      id: 24, 
-      url: "/src/assets/same.jpg", 
-      title: "กีฬาสี", 
-      category: "sport" 
+    {
+      id: 24,
+      url: "/src/assets/same.jpg",
+      title: "กีฬาสี",
+      category: "sport",
     },
     {
       id: 25,
       url: "/src/assets/mac.jpg",
-      title: "ขึ้นบ้านใหม่",
+      title: "งานเลี้ยง",
       category: "new-home",
     },
     {
@@ -176,6 +179,10 @@ function Gallery() {
     filter === "all"
       ? photos
       : photos.filter((photo) => photo.category === filter);
+  const handlePhotoClick = (photo) => {
+    setSelectedPhoto(photo);
+    setCurrentSection("photoDetail");
+  };
 
   return (
     <section className="gallery">
@@ -204,7 +211,7 @@ function Gallery() {
           className={filter === "new-home" ? "active" : ""}
           onClick={() => setFilter("new-home")}
         >
-          ขึ้นบ้านใหม่/ทำบุญ
+          ขึ้นบ้านใหม่/งานเลี้ยง
         </button>
         <button
           className={filter === "portrait" ? "active" : ""}
@@ -222,7 +229,11 @@ function Gallery() {
 
       <div className="photo-grid">
         {filteredPhotos.map((photo) => (
-          <div key={photo.id} className="photo-item">
+          <div
+            key={photo.id}
+            className="photo-item"
+            onClick={() => handlePhotoClick(photo)}
+          >
             <img src={photo.url} alt={photo.title} />
             <h3>{photo.title}</h3>
           </div>
